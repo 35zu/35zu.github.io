@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>空巢老人</title>
+		<link rel="stylesheet" href="css/pattern.css">
+	</head>
+
+	<body>
+		<div class="box">
+			<header class="a" id="nav">
+					<ul>
+						<li>
+							<a href="">首页</a>
+						</li>
+					</ul><!--首页链接-->
+					<ul>
+						<li>
+							<a href="">案例引入</a>
+						</li>
+					</ul><!--第一个大点完-->
+					<ul>
+						<li>
+							<a href="">总体概况</a>
+							<ul>
+								<li>老龄化情况</li>
+								<li>数量变化</li>
+								<li>年龄占比变化</li>
+							</ul>
+						</li>
+					</ul><!--第二个大点完-->
+					<ul>
+						<li>
+							<a href="">原因探究</a>
+							<ul>
+								<li>老龄化原因</li>
+								<li>数量增加原因</li>
+							</ul>
+						</li>
+					</ul><!--第三个大点完-->
+					<ul>
+						<li>
+							<a href="">更多思考</a>
+							<ul>
+								<li>影响</li>
+								<li>措施</li>
+							</ul>
+						</li>
+					</ul><!--第四个大点完-->
+			</header>
+		</div>
+		<p><img src="images/picture.jpg" width="1550" height="1020" alt="封面首页图"/></p>
+		<div id="colee_left" style="overflow:hidden;width:1550px;">
+			<table>
+			<tr><td id="colee_left1">
+			<table cellpadding="2" cellspacing="0" border="0">
+				<tr align="center">
+				<td><p><img src="images/one.jpg" alt="老人图片"></p></td>
+				<td><p><img src="images/two.jpg" alt="老人图片"></p></td>
+				<td><p><img src="images/three.jpg" alt="老人图片"></p></td>
+				<td><p><img src="images/four.jpg" alt="老人图片"></p></td>
+				<td><p><img src="images/five.jpg" alt="老人图片"></p></td>
+				</tr>
+			</table>
+			</td>
+			<td id="colee_left2" valign="top"></td>
+			</tr>
+			</table>
+	</div>
+		<script>
+			
+			var speed=25<!--数值越大速度越慢-->
+			var colee_left2=document.getElementById("colee_left2");
+			var colee_left1=document.getElementById("colee_left1");
+			var colee_left=document.getElementById("colee_left");
+			colee_left2.innerHTML=colee_left1.innerHTML
+			function Marquee3(){
+			if(colee_left2.offsetWidth-colee_left.scrollLeft<=0)//offsetWidth 是对象的可见宽度
+			colee_left.scrollLeft-=colee_left1.offsetWidth//scrollWidth 是对象的实际内容的宽，不包边线宽度
+			else{
+			colee_left.scrollLeft++
+			}
+			}
+			var MyMar3=setInterval(Marquee3,speed)
+			colee_left.onmouseover=function() {clearInterval(MyMar3)}
+			colee_left.onmouseout=function() {MyMar3=setInterval(Marquee3,speed)}
+			</script><!--图片滚动设计-->
+	</body>
+</html>
